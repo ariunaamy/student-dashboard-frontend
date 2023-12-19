@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     async function getStudents() {
-      let req = await fetch("http://localhost:3333/students");
+      let req = await fetch("http://localhost:9000/students");
       let res = await req.json();
       setShowStudent(res.students);
     }
@@ -42,8 +42,9 @@ function Home() {
       />{" "}
       <br /> <br />
       <input className="student_search_bar" type="text" placeholder="Search by tag" />
+      <div className="student_table">
       {showStudent?.map((student) => {
-        const fullName = `${student.firstName} ${student.lastName}`;
+        const fullName = `${student.first_name} ${student.last_name}`;
         if (
           searchQuery &&
           !fullName.toLowerCase().includes(searchQuery.toLowerCase())
@@ -51,22 +52,23 @@ function Home() {
           return null;
         }
         return (
-          <div key={student.id}>
-            <Link to={`/students/${student.id}`}>
-              <p>{fullName}</p>
+          <Link className="student_table_row" key={student.id} to={`/students/${student.id}`}>
               <img
+                className="student_profile_pic"
                 src={student.pic}
                 height={50}
                 width={50}
                 alt="{student.firstName} {student.lastName}"
-              />
-            </Link>
-            <p> {student.email} </p>
-            <p> {student.company} </p>
-            <p> {student.skill} </p>{" "}
-          </div>
+              /> 
+            <p className="student_info">{fullName}</p>
+            <p className="student_payment">$1200</p>
+            <p className="student_payment_status">status</p>
+            <p className="student_table_row">12 Sep 2023</p>{" "} 
+      
+           </Link>
         );
       })}
+      </div>    
     </div>
   );
 }

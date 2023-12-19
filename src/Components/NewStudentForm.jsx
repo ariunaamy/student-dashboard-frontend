@@ -15,7 +15,7 @@ function NewStudentForm() {
 
     console.log(data)
 
-    let req = await fetch("http://localhost:3333/students", {
+    let req = await fetch("http://localhost:9000/students", {
       headers: {
         "Content-Type": "application/json",
       },

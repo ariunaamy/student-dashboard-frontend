@@ -40,7 +40,37 @@ body {
     text-decoration: none;
     color: #1c1c1a;
 }
+
+.student_table {
+    font-size: 1.4em;
+    font-weight: 600;
+
+}
+
 .student_table_row {
     display: flex;
+    align-items: center;
 }
+
+.student_info {
+    order: 5; 
+    flex: 0.8;
+}
+
+.student_payment {
+    flex: 0.5;
+}
+
+.student_payment_status {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+}
+
+.student_enroll_date {
+    flex: 0.3;
+}
+
+
 
