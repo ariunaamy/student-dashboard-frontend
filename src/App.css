@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding-left: 420px;
+    color: #1c1c1a;
+    background-color: #f8f7ff;
+
+}
+
+#sideBar {
+    position: fixed;
+    background-color: pink;
+    width: 400px;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+}
+
+.student_profile_pic {
+    border: 4px solid #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: auto;
+}
+
+.student_search_bar {
+    border: none;
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 1em;
+    width: 360px;
+    box-shadow: 1px 1px #e6e6e6;
+}
+
+.student_search_bar:focus {
+    outline: none;
+}
+
+
+.student_table_a {
+    text-decoration: none;
+    color: #1c1c1a;
+}
+.student_table_row {
+    display: flex;
+}
+

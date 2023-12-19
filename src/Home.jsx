@@ -2,6 +2,7 @@ import "./App.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import { useEffect, useState } from "react";
+import SideBar from "./Components/SideBar";
 
 function Home() {
   const [showStudent, setShowStudent] = useState([]);
@@ -16,15 +17,22 @@ function Home() {
     getStudents();
   }, []);
   // console.log({showStudent})
+
+  function addNewStudent() {
+    console.log("add new student");
+  }
   return (
     <div>
+      <SideBar />
       <Navbar />
+      <h1>All Students</h1>
       <Link to="/new">
-        <button>Add New Student</button>
+        <button onClick={addNewStudent}>Add New Student</button>
       </Link>
       <br />
       <br />
       <input
+        className="student_search_bar"
         type="text"
         placeholder="Search by name"
         value={searchQuery}
@@ -33,7 +41,7 @@ function Home() {
         }}
       />{" "}
       <br /> <br />
-      <input type="text" placeholder="Search by tag" />
+      <input className="student_search_bar" type="text" placeholder="Search by tag" />
       {showStudent?.map((student) => {
         const fullName = `${student.firstName} ${student.lastName}`;
         if (
